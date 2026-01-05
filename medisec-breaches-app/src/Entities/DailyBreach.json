@@ -1,0 +1,53 @@
+{
+  "name": "DailyBreach",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Breach headline"
+    },
+    "organization": {
+      "type": "string",
+      "description": "Affected organization"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "breach_type": {
+      "type": "string",
+      "description": "Type of breach"
+    },
+    "records_affected": {
+      "type": "number"
+    },
+    "state": {
+      "type": "string",
+      "description": "US state where it occurred"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Brief summary of what happened"
+    },
+    "lessons_learned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "organization",
+    "date",
+    "breach_type",
+    "summary"
+  ]
+}

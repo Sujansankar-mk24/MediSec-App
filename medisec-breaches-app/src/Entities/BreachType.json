@@ -1,0 +1,61 @@
+{
+  "name": "BreachType",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the breach type"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "phishing",
+        "ransomware",
+        "insider_threat",
+        "physical",
+        "third_party",
+        "misconfiguration",
+        "social_engineering"
+      ],
+      "description": "Category of breach"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description"
+    },
+    "how_it_works": {
+      "type": "string",
+      "description": "Technical explanation"
+    },
+    "prevention_tips": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "real_world_examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon identifier"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "description"
+  ]
+}

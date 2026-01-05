@@ -1,0 +1,73 @@
+{
+  "name": "Quiz",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "phishing",
+        "ransomware",
+        "insider_threat",
+        "physical",
+        "third_party",
+        "misconfiguration",
+        "social_engineering",
+        "general"
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "string"
+          },
+          "question_text": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct_answer": {
+            "type": "number"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "points": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "time_limit_minutes": {
+      "type": "number",
+      "default": 10
+    },
+    "passing_score": {
+      "type": "number",
+      "default": 70
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "difficulty",
+    "questions"
+  ]
+}

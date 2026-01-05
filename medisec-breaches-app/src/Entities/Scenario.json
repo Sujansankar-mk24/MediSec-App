@@ -1,0 +1,110 @@
+{
+  "name": "Scenario",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "description": "Setup for the scenario"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "phishing",
+        "ransomware",
+        "insider_threat",
+        "physical",
+        "third_party",
+        "social_engineering"
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "role_context": {
+      "type": "string",
+      "description": "What role the user plays in this scenario"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "narrative": {
+            "type": "string"
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "next_step": {
+                  "type": "string"
+                },
+                "is_correct": {
+                  "type": "boolean"
+                },
+                "consequence": {
+                  "type": "string"
+                },
+                "points": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "final_outcomes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "outcome_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "is_success": {
+            "type": "boolean"
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "points_possible": {
+      "type": "number",
+      "default": 100
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "category",
+    "difficulty",
+    "steps"
+  ]
+}
