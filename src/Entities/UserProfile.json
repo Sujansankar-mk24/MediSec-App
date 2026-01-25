@@ -1,0 +1,102 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Reference to the user"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "healthcare_worker",
+        "it_professional",
+        "administrator",
+        "student",
+        "other"
+      ],
+      "description": "User's role in healthcare"
+    },
+    "organization_type": {
+      "type": "string",
+      "enum": [
+        "hospital",
+        "clinic",
+        "insurance",
+        "pharmacy",
+        "research",
+        "other"
+      ],
+      "description": "Type of healthcare organization"
+    },
+    "experience_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "description": "Cybersecurity knowledge level"
+    },
+    "quiz_difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "description": "Preferred quiz difficulty"
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Topics of interest"
+    },
+    "onboarding_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "current_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "longest_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "last_visit_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "total_points": {
+      "type": "number",
+      "default": 0
+    },
+    "completed_scenarios": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of completed scenarios"
+    },
+    "completed_quizzes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of completed quizzes"
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Earned badge IDs"
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}
